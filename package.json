@@ -13,6 +13,7 @@
     "build:docs": "embedme docs/* && yarn build && node scripts/genAddrMainnetOverview.js > docs/overview_mainnet_address.md",
     "serve:docs": "docsify serve ./docs",
     "test": "jest --verbose",
+    "test:sequentially": "jest --verbose --runInBand",
     "link": "yarn build && cd dist && npm link",
     "prepublishOnly": "echo \"Error: Don't run 'npm publish' in root. Use 'npm run dist' instead.\" && exit 1",
     "dist": "cd dist && npm publish --ignore-scripts --access public"
