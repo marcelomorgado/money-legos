@@ -57,12 +57,12 @@ class CustomEnvironment extends NodeEnvironment {
     this.provider = provider;
     this.global.wallet = wallet;
     this.global.provider = provider;
-    await this.provider.send("evm_snapshot", []);
+    // await this.provider.send("evm_snapshot", []);
   }
 
   async teardown() {
     await super.teardown();
-    await this.provider.send("evm_revert", ["0x1"]);
+    // await this.provider.send("evm_revert", ["0x1"]);
   }
 
   //@ts-ignore
