@@ -16,7 +16,7 @@ const startChain = async () => {
 
   // Note: Don't fork if using MoonNet node.
   // See more: https://github.com/studydefi/money-legos/issues/58
-  if (MAINNET_NODE_URL.match(/node.moonnet/)) {
+  if (MAINNET_NODE_URL.match(/3210/)) {
     provider = new ethers.providers.JsonRpcProvider(MAINNET_NODE_URL);
   } else {
     const ganache = Ganache.provider({
@@ -57,12 +57,12 @@ class CustomEnvironment extends NodeEnvironment {
     this.provider = provider;
     this.global.wallet = wallet;
     this.global.provider = provider;
-    // await this.provider.send("evm_snapshot", []);
+    await this.provider.send("evm_snapshot", []);
   }
 
   async teardown() {
     await super.teardown();
-    // await this.provider.send("evm_revert", ["0x1"]);
+    await this.provider.send("evm_revert", ["0x1"]);
   }
 
   //@ts-ignore
