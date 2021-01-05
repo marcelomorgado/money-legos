@@ -11,6 +11,7 @@ import { default as onesplit } from "./onesplit";
 import { default as synthetix } from "./synthetix";
 import { default as uma } from "./uma";
 import { default as uniswap } from "./uniswap";
+import { default as uniswap2 } from "./uniswap2";
 
 export const legos = {
   aave,
@@ -26,4 +27,5 @@ export const legos = {
   synthetix,
   uma,
   uniswap,
+  uniswap2,
 };
